@@ -10,6 +10,7 @@ const generateTarget = () => {
 
 //Creating guess function for human - computer - target guess
 const compareGuesses = (human , computer, target) => {
+    check(human);
     const userGuess = Math.abs(target - human);
     const computerGuess = Math.abs(target - computer);
     return userGuess <= computerGuess;
@@ -29,4 +30,10 @@ const advanceRound = () => {
     currentRoundNumber += 1;
 };
 
+//Alert the user for valid input
+function check(human) {
+    if(human < 0 || human > 9) {
+        alert('Enter a number between 0 and 9')
+    }
+};
 
